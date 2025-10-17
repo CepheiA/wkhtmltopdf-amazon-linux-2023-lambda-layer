@@ -68,13 +68,13 @@ cp /usr/lib64/libbrotlicommon*.so.* /package/lib/ || true
 
 echo "Copying local fonts..."
 # If you have a local 'fonts' folder next to this script, copy it to /package/fonts
-if [ -d "./fonts" ]; then
-  cp -r ./fonts/* /package/fonts/
+if [ -d "/build/fonts" ]; then
+  cp -r /build/fonts/* /package/fonts/
 fi
 
 # If you also have a fonts.conf, and you want it in the ZIP root:
-if [ -f "./fonts.conf" ]; then
-  cp ./fonts.conf /package/
+if [ -f "/build/fonts/fonts.conf" ]; then
+  cp /build/fonts/fonts.conf /package/
 fi
 
 echo "Zipping the layer with bin/, lib/, and fonts/ at the root..."
